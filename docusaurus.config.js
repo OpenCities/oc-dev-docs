@@ -1,6 +1,6 @@
 module.exports = {
   title: 'OpenCities Developer Documentation',
-  tagline: 'The tagline of my site',
+  tagline: '',
   url: 'http://opencities.github.io/oc-dev-docs',
   baseUrl: '/oc-dev-docs/',
   favicon: 'img/favicon.ico',
@@ -22,7 +22,7 @@ module.exports = {
         },
         {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'http://opencities.github.io/oc-dev-docs',
           label: 'GitHub',
           position: 'right',
         },
@@ -70,12 +70,12 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'http://opencities.github.io/oc-dev-docs',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} OpenCities. Built with Docusaurus.`,
     },
   },
   presets: [
@@ -88,13 +88,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/OpenCities/oc-dev-docs/tree/master',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://github.com/OpenCities/oc-dev-docs/tree/master/blog',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
