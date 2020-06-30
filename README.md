@@ -1,6 +1,6 @@
-# Website
+# OpenCities Developer Documentation Test
 
-This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+This website is a test of using [Docusaurus 2](https://v2.docusaurus.io/) to build a developer documentation site.
 
 ### Installation
 
