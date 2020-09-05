@@ -1,6 +1,6 @@
 module.exports = {
   someSidebar: {
-    Docusaurus: ['doc1', 'doc2', 'doc3'],
-    Features: ['mdx'],
+    OpenCities: ['oc_tags', 'doc3'],
+    Features: ['styleguide', 'mdx'],
   },
 };
