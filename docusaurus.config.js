@@ -1,7 +1,7 @@
 module.exports = {
   title: 'OpenCities Developer Documentation',
   tagline: '',
-  url: 'http://opencities.github.io/oc-dev-docs/',
+  url: 'http://opencities.github.io/',
   baseUrl: '/oc-dev-docs/',
   favicon: 'img/favicon.ico',
   organizationName: 'OpenCities', // Usually your GitHub org/user name.
