@@ -135,28 +135,32 @@ Used to output data about the logged in website visitor
 - [OC Department]: Any user detail found on the User Details admin screen
 
 
-oc:AddPageClass
-	WARNING:	There is a change coming in this tag which will be in the September 2020 release. For the timebeing, please only
-				use it to create class names that are lowercase-dash-separated
+## oc:AddPageClass
 
-	Adds a css class to the list of classes that are rendered in the <body> tag of the currently loading page and anywhere else in the document that the <oc:PageClasses> tag is used.
+:::warning
 
-	The value to be converted to a class can be specified in an attribute:
-		<oc:AddPageClass value="my-class-name" />
-		Output: <body class="... my-class-name ...">
+There is a change coming in this tag which will be in the September 2020 release. For the time being, please only use it to create class names that are lowercase-dash-separated.
 
-	Or it can be specified as a child element
-		<oc:AddPageClass>my-class-name</oc:AddPageClass>
-		Output: <body class="... my-class-name ...">
+:::
 
-	When using a child element, you can make use of other OpenCities mark-up to produce the class
-		<oc:AddPageClass><ItemData DataDefinition="OC Homepage Display" Template="OC CSS Class" /></oc:AddPageClass>
-		Output: <body class="... homepage-pin ...">
+Adds a css class to the list of classes that are rendered in the `<body>` tag of the currently loading page and anywhere else in the document that the `<oc:PageClasses>` tag is used.
 
-	AS OF SEPTEMBER 2020:
-	The value of the tag is sanitised to produce a valid and predictable class name
-		<oc:AddPageClass>     ===123!!!HELLO World!! %$#"    </oc:AddPageClass>
-		Output: <body class="... n123---hello-world ...">
+The value to be converted to a class can be specified in an attribute:
+- `<oc:AddPageClass value="my-class-name" />`
+- Output: `<body class="... my-class-name ...">`
+
+Or it can be specified as a child element:
+- `<oc:AddPageClass>my-class-name</oc:AddPageClass>`
+- Output: `<body class="... my-class-name ...">`
+
+When using a child element, you can make use of other OpenCities mark-up to produce the class:
+- `<oc:AddPageClass><ItemData DataDefinition="OC Homepage Display" Template="OC CSS Class" /></oc:AddPageClass>`
+- Output: `<body class="... homepage-pin ...">`
+
+AS OF SEPTEMBER 2020:
+The value of the tag is sanitised to produce a valid and predictable class name:
+- `<oc:AddPageClass>     ===123!!!HELLO World!! %$#"    </oc:AddPageClass>`
+- Output: `<body class="... n123---hello-world ...">`
 
 
 oc:Case
