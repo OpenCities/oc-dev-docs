@@ -20,7 +20,6 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'http://opencities.github.io/oc-dev-docs',
           label: 'GitHub',
