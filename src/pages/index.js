@@ -8,32 +8,29 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: <>What about renaming this?</>,
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: <>Websites</>,
+    imageUrl: 'img/solution-websites.png',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Launch modern, easy-to-use websites that always evolve to put the needs of your community at the centre.
       </>
     ),
   },
   {
-    title: <>Focus on What Matters</>,
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: <>Forms</>,
+    imageUrl: 'img/solution-forms.png',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Transform your static PDFs into simple, interactive online forms & services anyone can complete within minutes.
       </>
     ),
   },
   {
-    title: <>Powered by React</>,
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: <>Intranets</>,
+    imageUrl: 'img/solution-intranet.png',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Deliver a useful, up-to-date intranet that brings together your internal content, teams and processes.
       </>
     ),
   },
