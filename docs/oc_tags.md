@@ -323,6 +323,125 @@ Note: Images can also be resized and cropped with a variety of different query s
 <img src="myimage.jpg?w=150&h=150"> - resize and smart-crop an image to 150 x 150 pixels
 <img src="myimage.jpg?w=150&h=150&p=0.5,0.5"> - resize and center-crop an image to 150 x 150 pixels
 ```
+## oc:LayoutCell
+*(Coming September 2020)* Dynamically renders an OpenCities 12-Column Grid cell. The cell can grow to fill 
+empty space in the row or not render when it contains no content.
+
+### Attributes
+
+- **`group`**
+
+  This is a name which is used to group cells together in the same layout calculation.
+
+  Normally all cells in an individual grid will be part of the same group,
+  but this is not enforced so as to allow use cases where it makes sense
+  to have multiple groupings within the same grid.
+
+  When building a template, all cells that you want to participate in a
+  layout calculation must be part of the same group and should not be
+  mixed with raw cell divs in the template. To work properly, all cells
+  in the grid must be `<oc:LayoutCell>`.
+
+  If the `group` attribute is left blank or omitted, the `expandable` attribute will be ignored.
+	
+- **`expandable` (default: false)**
+
+  Boolean value that indicates whether a cell can be made wider to fill any remaining space at the end of a row
+
+- **`hideIfEmpty` (default: false)**
+
+  Boolean value that indicates that a cell should not render at all if contains no content
+
+- **`class`**
+
+  Custom classes to output on the rendered cell's class attribute
+		
+- **`xs` (default: 12)**
+
+  Number of grid columns the cell will take up in extra-small "xs" size viewports
+		
+- **`s` (default: inherits from xs)**
+  
+  Number of grid columns the cell will take up in small "s" size viewports
+		
+- **`m` (default: inherits from s)**
+
+  Number of grid columns the cell will take up in medium "m" size viewports
+		
+- **`lg` (default: inherits from m)**
+  
+  Number of grid columns the cell will take up in large "lg" size viewports
+
+### Examples
+
+Consider the following template where we've given each `<oc:LayoutCell>` a class name and filled it with content:
+
+``` html
+<div class="grid">
+  <oc:LayoutCell group="content" class="main-content" m="8" lg="8" expandable="true">
+    Here is some content for the main content area
+  </oc:LayoutCell>
+  <oc:LayoutCell group="content" class="sidebar-content" m="4" hideIfEmpty="true">
+    Here is some content for the sidebar
+  </oc:LayoutCell>
+</div>
+```
+
+Once rendered, the generated html will look like this:
+
+``` html
+<div class="grid">
+  <div class="col-xs-12 col-m-8 main-content">
+    Here is some content for the main content area
+  </div>
+  <div class="col-xs-12 col-m-4 sidebar-content">
+    Here is some content for the sidebar
+  </div>
+</div>
+```
+
+You will notice that the rendered cells have the class `col-xs-12` even though we didn't provide a 
+value for the `xs` attribute.	This is because `xs` has a default value of 12 and will render on a cell 
+whether it is provided or not. 12 is the default because OpenCities uses a 12-column grid and a
+cell will go full-width if not otherwise specified.
+
+You may also notice that the `lg` attribute has been omitted from the main-content cell even though 
+we provided a value for the `lg` attribute. This is because the large and medium viewport sizes have 
+the same column-width value (8). Since each viewport size inherits its column-width from the 
+next-smallest size (e.g. large inherts from medium), the value for the large viewport is redundant 
+and does not appear in the rendered cell.
+	
+Now watch what happens when we remove content from the sidebar cell:
+
+``` html	
+<div class="grid">
+  <oc:LayoutCell group="content" class="main-content" m="8" lg="8" expandable="true">
+    Here is some content for the main content area
+  </oc:LayoutCell>
+  <oc:LayoutCell group="content" class="sidebar-content" m="4" hideIfEmpty="true">
+  
+  </oc:LayoutCell>
+</div>	
+```
+
+Once rendered, the generate html looks a bit different:
+
+``` html	
+<div class="grid">
+  <div class="col-xs-12 main-content">
+    Here is some content for the main content area
+  </div>
+</div>
+```
+
+You will first notice that the sidebar cell has disappeared. This is because it had the `hideIfEmpty` 
+attribute set to true and it contained nothing but white space. 
+
+You might also notice that the main-content cell now only has the `col-xs-12` column-width class. 
+This is because it had the `expandable` attribute set to `true`, and because the sidebar cell no longer appears, 
+we were left with 4 unused columns in the row. The `expandable` attribute allowed the main-content cell to
+expand out to the full 12 columns and fill the empty space. Because every viewport is now 12-columns wide,
+we remove the redundant `col-m-12` and are left with simply `col-xs-12`.
 
 ## oc:PageClasses
 Renders a list of page-level css classes and any classes that were added through the `<oc:AddPageClass>` tag. All values are sanitized to valid and predictable class names. NOTE: This tag is already part of the standard site template and already renders on every page.
