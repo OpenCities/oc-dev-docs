@@ -1,5 +1,7 @@
 # OpenCities Developer Documentation Test
 
+See it in the wild at https://opencities.github.io/oc-dev-docs/
+
 This website is a test of using [Docusaurus 2](https://v2.docusaurus.io/) to build a developer documentation site.
 
 ### Installation
