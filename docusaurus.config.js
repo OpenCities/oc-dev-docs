@@ -21,7 +21,7 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'http://opencities.github.io/oc-dev-docs',
+          href: 'https://github.com/OpenCities/oc-dev-docs',
           label: 'GitHub',
           position: 'right',
         },
@@ -61,7 +61,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'http://opencities.github.io/oc-dev-docs',
+              href: 'https://github.com/OpenCities/oc-dev-docs',
             },
           ],
         },
