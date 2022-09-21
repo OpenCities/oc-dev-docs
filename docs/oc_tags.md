@@ -1,6 +1,7 @@
 ---
 id: oc_tags
 title: Tags
+slug: /
 ---
 
 ## AlternativeLanguageDetail
